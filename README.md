@@ -10,8 +10,91 @@ mapas geográficos (Azure Maps) e tabelas dinâmicas.
 > são sintéticos, sem qualquer relação com operações reais. Empresa de
 > referência: "Mineradora Ouro Verde".
 
-🔗 **Dashboard interativo (NovyPro):** _(cole aqui o link gerado após publicar)_
-📑 **Capturas:** [prints/](prints/) · 📄 [PDF do relatório](Reporte%20Diário%20de%20Mina%20-%20Portfolio.pdf)
+🎥 **Demo em vídeo (Loom):** [Assista aqui (Loom)](https://www.loom.com/share/82625cb547c84a139cf45f36543c1821)
+📑 **Capturas:** [galeria abaixo](#galeria-de-telas) · 📄 [PDF do relatório](Reporte%20Diário%20de%20Mina%20-%20Portfolio.pdf)
+
+---
+
+## Galeria de telas
+
+### 1. Reporte Diário — Visão geral
+Tela principal de acompanhamento da operação. Mostra **movimentação total** (Minério,
+Estéril, Retomada, Outras Movimentações), evolução diária da movimentação, e os 4
+blocos de KPI por tipo de equipamento (**Perfuratrizes, Escavadeira 75t/80t,
+Escavadeira 1350t, Caminhões XCMG**) com DF, UF e Produtividade Efetiva. O
+**impactômetro de transporte** (waterfall à direita) decompõe o gap entre Planejado
+e Realizado em HC, DF, UF e Produtividade.
+
+![Reporte Diário — Visão geral](prints/01-reporte-diario-geral.png)
+
+#### Interação — Tooltip "Lavra por Tipo de Material"
+Ao passar o mouse sobre o card de **Movimentação Total**, abre um tooltip
+customizado com o detalhamento por tipo de material — **Minério**, **Estéril**
+e **OM** (Outras Movimentações) — exibindo `Ton Real (tbs)` e diferença (%)
+versus o planejado. Demonstra **storytelling no card**: o usuário enxerga o
+agregado e, com um hover, abre o drill por material sem sair da página.
+
+![Tela do dashboard com tooltip Lavra por Tipo de Material aberto](prints/10-tooltip-lavra-por-material.png)
+
+### 2. Perfuração Diária
+Acompanhamento da operação de perfuração com **metros perfurados por dia**,
+comparação D-5 (média móvel) e MTD (acumulado do mês), além dos KPIs da
+**Perfuratriz DM45** (DF, UF, Produtividade em m/h) e do impactômetro de
+transporte.
+
+![Perfuração Diária](prints/02-perfuracao-diaria.png)
+
+### 3. Análise Hora-a-Hora
+Visão de granularidade horária permitindo selecionar o indicador desejado
+(**Mov Total, Minério, Estéril, Outras Movimentações, Viagens, DMT, Fila de
+Carregamento/Basculamento, Tempo de Ciclo**). Mostra os KPIs do dia
+selecionado para cada tipo de equipamento.
+
+![Análise Hora-a-Hora](prints/03-analise-hora-a-hora.png)
+
+### 4. Análise por Equipamento
+Permite filtrar por equipamento individual para diagnóstico fino. Útil para
+investigar por que um equipamento específico está abaixo da meta — mostra DF,
+UF, Produtividade e a cascata Build Up só para aquela máquina.
+
+![Análise por Equipamento](prints/04-analise-por-equipamento.png)
+
+### 5. Daily Report — Resumo (Real Daily × Plan Daily × MTD)
+Tabela executiva consolidando **todos os indicadores operacionais do dia
+versus o plano**, com Real Daily, Plan Daily, Diferença, Real MTD, Plan MTD,
+Diferença MTD e Month Plan. Cobertura: carga média, DMT, tonelagem por tipo
+de material, KPIs por equipamento.
+
+![Daily Report — Resumo](prints/05-daily-report-resumo.png)
+
+### 6. Daily Report — Dia a Dia
+Detalhamento dia-a-dia para um período selecionado. Mostra Real Daily × Plan
+Daily de cada indicador para cada dia do mês, facilitando identificar dias
+fora do esperado.
+
+![Daily Report — Dia a Dia](prints/06-daily-report-dia-a-dia.png)
+
+### 7. Disponibilidade — Escavadeiras
+Heatmap de **DF (Disponibilidade Física) por escavadeira × dia**. Cores
+quentes (vermelho/laranja) sinalizam dias críticos abaixo da meta; verde
+indica desempenho saudável. Visão imediata de padrões de manutenção/quebra.
+
+![Disponibilidade Física por Escavadeira](prints/07-disponibilidade-escavadeiras.png)
+
+### 8. Utilização — Escavadeiras
+Mesmo padrão de heatmap, agora para **UF (Utilização Física) por escavadeira
+× dia**. Útil para diferenciar problema de disponibilidade (máquina parada
+para manutenção) de problema de utilização (máquina disponível mas ociosa).
+
+![Utilização Física por Escavadeira](prints/08-utilizacao-escavadeiras.png)
+
+### 9. Produtividade por Equipamento (TAG)
+Detalhe individual por **TAG** (identificador único do equipamento). Cada
+linha mostra a produtividade diária de uma máquina específica — permite
+ranking interno entre equipamentos do mesmo grupo (ex: comparar ESC-50-01
+× ESC-50-02 entre si).
+
+![Produtividade por Equipamento](prints/09-produtividade-por-equipamento.png)
 
 ---
 
@@ -155,7 +238,7 @@ Detalhes em [`COMO_ABRIR.md`](COMO_ABRIR.md).
 ├── dados_ficticios.xlsx
 ├── COMO_ABRIR.md         Passo a passo de abertura no Power BI Desktop
 ├── README.md             Este arquivo
-└── prints/               Screenshots do dashboard (adicione os seus)
+└── prints/               Screenshots do dashboard (9 telas + tooltip)
 ```
 
 ---

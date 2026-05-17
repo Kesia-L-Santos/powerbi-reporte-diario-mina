@@ -2,7 +2,7 @@
 
 Dashboard em **Power BI** que consolida indicadores diários de produção,
 disponibilidade e utilização da frota de uma mina de ouro a céu aberto.
-Inclui 23 páginas com cards de KPI, gráficos combo, waterfall (cascata) e tabelas dinâmicas.
+Inclui 9 páginas com cards de KPI, gráficos combo, waterfall (cascata) e tabelas dinâmicas.
 
 > **Dados fictícios.** Este projeto reproduz a *estrutura analítica* de um
 > dashboard real (modelo, medidas, layout dos visuais), mas todos os dados
